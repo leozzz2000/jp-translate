@@ -47,6 +47,18 @@
 				myInput.val("");
 			});		
 		
+			//key enter and trigger translate
+			$("#myInput").keypress(function(e){
+			  code = (e.keyCode ? e.keyCode : e.which);
+			  if (code == 13)
+			  {
+			      $("#translateButton").trigger('click');
+
+			  }
+
+			});
+		
+		
 			//ajax translate
 			$("#translateButton").click(function () {
 				$("table").find("td.highlighted").removeClass("highlighted");
