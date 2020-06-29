@@ -11,7 +11,7 @@
 	
 	<div id="textField">&nbsp</div>
   
-	<input id="myInput" value=""/> <button id="btnDel">Delete</button>
+	<input id="myInput" value=""/> <button id="btnDel">Delete</button> <button id="btnClr">Clear</button>
     <form>
         <select id="targetLanguage">
             <option value="zh-tw" selected = "selected">Chinese</option>
@@ -38,6 +38,12 @@
 				myInput.val(myInput.val().slice(0, -1));
 			});
 			
+			//clear the text box
+			$("#btnClr").click(function () {
+				var myInput = $('#myInput');
+				myInput.val("");
+			});		
+		
 			//ajax translate
 			$("#translateButton").click(function () {
 				$("table").find("td.highlighted").removeClass("highlighted");
